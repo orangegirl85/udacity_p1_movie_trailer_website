@@ -7,6 +7,7 @@
         // Start playing the video whenever the trailer modal is opened
         $(document).on('click', '.movie-tile', function (event) {
             var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
+            var storyline = $(this).attr('data-storyline')
             var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
             $("#trailer-video-container").empty().append($("<iframe></iframe>", {
               'id': 'trailer-video',
@@ -14,6 +15,7 @@
               'src': sourceUrl,
               'frameborder': 0
             }));
+            $(".modal-content .storyline").empty().append(storyline)
         });
         // Animate in the movies when the page loads
         $(document).ready(function () {

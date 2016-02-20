@@ -34,6 +34,8 @@ main_page_content = '''
           </a>
           <div class="scale-media" id="trailer-video-container">
           </div>
+          <p class="storyline">
+          </p>
         </div>
       </div>
     </div>
@@ -60,7 +62,8 @@ main_page_content = '''
 
 # A single movie entry html template
 movie_tile_content = '''
-<div class="menu-category list-group-item movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
+<div class="menu-category list-group-item movie-tile text-center" data-storyline="{movie_storyline}"
+  data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
     <img src="{poster_image_url}" alt="{movie_title}">
     <h2>{movie_title}</h2>
 </div>
@@ -71,6 +74,7 @@ def create_movie_tiles_content(movies):
     # The HTML content for this section of the page
     content = ''
     for movie in movies:
+        #print movie.storyline
         # Extract the youtube ID from the url
         youtube_id_match = re.search(
             r'(?<=v=)[^&#]+', movie.trailer_youtube_url)
@@ -83,7 +87,9 @@ def create_movie_tiles_content(movies):
         content += movie_tile_content.format(
             movie_title=movie.title,
             poster_image_url=movie.poster_image_url,
-            trailer_youtube_id=trailer_youtube_id
+            trailer_youtube_id=trailer_youtube_id,
+            movie_storyline=movie.storyline
+
         )
     return content
 
@@ -94,7 +100,8 @@ def open_movies_page(movies):
 
     # Replace the movie tiles placeholder generated content
     rendered_content = main_page_content.format(
-        movie_tiles=create_movie_tiles_content(movies))
+        movie_tiles=create_movie_tiles_content(movies)
+    )
 
     # Output the file
     output_file.write(main_page_head + rendered_content)
