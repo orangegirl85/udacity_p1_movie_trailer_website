@@ -16,8 +16,8 @@ main_page_head = '''
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="app/movies.css">
-    <script type="text/javascript" charset="utf-8" src="app/movies.js"></script>
+    <link rel="stylesheet" type="text/css" href="static/movie.css">
+    <script type="text/javascript" charset="utf-8" src="static/movie.js"></script>
 </head>
 '''
 
@@ -32,10 +32,10 @@ main_page_content = '''
           <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
             <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24" alt="Close Trailer"/>
           </a>
-          <div class="scale-media" id="trailer-video-container">
-          </div>
-          <p class="storyline">
-          </p>
+          <!-- Movie Trailer Container -->
+          <div class="scale-media" id="trailer-video-container"></div>
+          <!-- Movie Storyline Container -->
+          <p class="storyline"></p>
         </div>
       </div>
     </div>
@@ -74,7 +74,6 @@ def create_movie_tiles_content(movies):
     # The HTML content for this section of the page
     content = ''
     for movie in movies:
-        #print movie.storyline
         # Extract the youtube ID from the url
         youtube_id_match = re.search(
             r'(?<=v=)[^&#]+', movie.trailer_youtube_url)
@@ -96,7 +95,7 @@ def create_movie_tiles_content(movies):
 
 def open_movies_page(movies):
     # Create or overwrite the output file
-    output_file = open('fresh_tomatoes.html', 'w')
+    output_file = open('movie_website.html', 'w')
 
     # Replace the movie tiles placeholder generated content
     rendered_content = main_page_content.format(

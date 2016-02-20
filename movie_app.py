@@ -1,5 +1,5 @@
-import media
-import fresh_tomatoes
+from app import media
+from app import movie_website
 
 
 movies_dict = dict(
@@ -81,4 +81,4 @@ for movie in movies_dict:
     )
 
 
-fresh_tomatoes.open_movies_page(movies)
+movie_website.open_movies_page(movies)
