@@ -1,6 +1,7 @@
-Movies Trailer Website
+# Movies Trailer Website
+------------------------
 
-    * Movie Trailer Website is an application where users can see my   favorite movies and watch the trailers.
+    * Movie Trailer Website is an application where users can see my favorite movies and watch the trailers.
 
 
 # Prerequisites
@@ -23,7 +24,7 @@ Movies Trailer Website
 
 # Extras
 ----------
-1. Organize structure project
+1. Project Structure
 ```
 /p1_movie_trailer_website
     /app
