@@ -2,7 +2,6 @@ import webbrowser
 import os
 import re
 
-
 # Styles and scripting for the page
 main_page_head = '''
 <!DOCTYPE html>
@@ -20,7 +19,6 @@ main_page_head = '''
     <script type="text/javascript" charset="utf-8" src="static/movie.js"></script>
 </head>
 '''
-
 
 # The main page layout and title bar
 main_page_content = '''
@@ -51,7 +49,7 @@ main_page_content = '''
       </div>
     </div>
     <div class="container">
-      <div class="menu row">
+      <div class="row">
         {movie_tiles}
       </div>
     </div>
@@ -59,10 +57,9 @@ main_page_content = '''
 </html>
 '''
 
-
 # A single movie entry html template
 movie_tile_content = '''
-<div class="menu-category list-group-item movie-tile text-center" data-storyline="{movie_storyline}"
+<div class="movie-item list-group-item movie-tile text-center" data-storyline="{movie_storyline}"
   data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
     <img src="{poster_image_url}" alt="{movie_title}">
     <h2>{movie_title}</h2>

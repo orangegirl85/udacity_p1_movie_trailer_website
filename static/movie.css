@@ -2,6 +2,7 @@ body {
     padding-top: 80px;
     background-color: #fffccc;
 }
+
 #trailer .modal-dialog {
     margin-top: 200px;
     width: 640px;
@@ -17,12 +18,19 @@ body {
     width: 100%;
     height: 100%;
 }
+.modal-content{
+    padding: 20px;
+}
+.modal-content .storyline{
+    margin-top: 10px;
+}
+
 .movie-tile {
     margin-bottom: 20px;
     padding-top: 20px;
 }
 .movie-tile:hover {
-    background-color: #EEE;
+    background-color: #ccd9ff;
     cursor: pointer;
 }
 .scale-media {
@@ -39,31 +47,18 @@ body {
     background-color: white;
 }
 
-/**, *:before, *:after {box-sizing:  border-box !important;}*/
+.list-group-item {
+    background-color: #EFF;
+}
 
-
+/* Masonry CSS with Bootstrap */
 .row {
     -moz-column-width: 23em;
     -webkit-column-width: 23em;
-    -moz-column-gap: -3em;
-    -webkit-column-gap: -3em;
 }
 
-.menu-category {
+.movie-item {
     display: inline-block;
-    /*margin-bottom: 20px;
-    padding-top: 20px;*/
-    margin:  0.25rem;
-    padding:  2rem;
     width:  100%;
 }
 
-.modal-content{
-    padding: 20px;
-    background-color: #ffffff;
-}
-
-.modal-content .storyline{
-    margin-top: 10px;
-    /*font-size: 16px;*/
-}
