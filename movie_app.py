@@ -1,3 +1,11 @@
+"""This file is the entry point of the Movie Trailer Website application.
+
+It:
+    - creates a list of `Movie` instances from a `movies_dict`
+    dictionary
+    - calls `open_movies_page` rendering function
+"""
+
 from app import media
 from app import movie_website
 
